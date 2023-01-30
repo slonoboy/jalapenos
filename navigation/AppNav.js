@@ -19,6 +19,7 @@ const AppNav = () => {
             flex: 1,
             justifyContent:'center',
             alignItems: 'center',
+            backgroundColor: '#15191F'
         }}>
             <LottieView
               style={{

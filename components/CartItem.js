@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBars, faLocationDot, faP, faCirclePlus, faPlus, faBagShopping, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Spacer, Divider } from '@react-native-material/core';
 import { HomeContext } from '../context/HomeContext';
+import { set_first_char_to_capital } from '../utils/utils';
 
 const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingItem, setRemoveModalShow}) => {
 
@@ -29,7 +30,7 @@ const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingIt
                     minHeight: 100,
                     width: 200,
                     borderRadius: 20,
-                    backgroundColor: 'white',
+                    backgroundColor: '#2E3235',
                     justifyContent: 'center',
                     padding: 20,
                     shadowColor: "#000",
@@ -45,9 +46,8 @@ const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingIt
                     <Text style={{
                         fontWeight: 'bold',
                         fontSize: 12,
-                        color: '#3D3838',
-                        textTransform: 'uppercase'
-                    }}>{cartItem.dish.name}</Text>
+                        color: '#FFFFFF',
+                    }}>{set_first_char_to_capital(cartItem.dish.name)}</Text>
                     <Text style={{
                         fontWeight: 'bold',
                         fontSize: 12,
@@ -56,8 +56,8 @@ const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingIt
                     <Text style={{
                         fontWeight: 'bold',
                         fontSize: 15,
-                        color: '#FF0036'
-                    }}>${cartItem.sum_price}</Text>
+                        color: '#F83103'
+                    }}>${cartItem.sum_price.toFixed(2)}</Text>
                 </View>
 
                 <Spacer/>
@@ -65,7 +65,7 @@ const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingIt
                 <View style={{
                     minHeight: 80,
                     borderRadius: 10,
-                    backgroundColor: 'white',
+                    backgroundColor: '#2E3235',
                     justifyContent: 'center',
                     alignItems: 'center',
                     shadowColor: "#000",
@@ -86,6 +86,7 @@ const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingIt
                         {/* <FontAwesomeIcon
                         icon={faPlus}/> */}
                         <Text style={{
+                            color: '#CDCDCD'
                         }}>Add</Text>
                     </TouchableOpacity>
                     
@@ -93,7 +94,7 @@ const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingIt
                         paddingHorizontal: 20,
                         paddingVertical: 10,
                         fontSize: 15,
-                        color: '#3D3838'
+                        color: '#FFFFFF'
                     }}>{cartItem.count}</Text>
 
                     <TouchableOpacity style={{
@@ -103,10 +104,25 @@ const CartItem = ({cartItem, incrementCartItem, decrementCartItem, setRemovingIt
                     onPress={() => decrementOrRemove()}>
                         {/* <FontAwesomeIcon
                         icon={faMinus}/> */}
-                        <Text>Remove</Text>
+                        <Text style={{
+                            color: '#CDCDCD'
+                        }}>Remove</Text>
                     </TouchableOpacity>
                 </View>
             </View>
+
+            <TextInput
+                        style={{
+                            marginTop: 40, 
+                            borderBottomWidth: 1,
+                            borderColor: '#FFFFFF',
+                            color: '#FFFFFF',
+                            width: '100%',
+                            fontSize: 15,
+                        }} 
+                        placeholder="Write down your preferences"
+                        placeholderTextColor={"#FFFFFF"}
+                    />
 
             <Divider style={{
                 marginVertical: 30

@@ -42,6 +42,7 @@ const OrderHistoryScreen = ({navigation}) => {
   return (
     <View style={{
       flex: 1,
+      backgroundColor: '#15191F',
     }}>
       <CustomHeader navigation={navigation} name={"Order history"}/>
 

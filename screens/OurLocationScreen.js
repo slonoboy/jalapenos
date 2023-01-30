@@ -4,7 +4,10 @@ import CustomHeader from '../components/CustomHeader'
 
 const OurLocationScreen = ({navigation}) => {
   return (
-    <View>
+    <View style={{
+      flex: 1,
+      backgroundColor: '#15191F'
+    }}>
       <CustomHeader name={"Our Location"} navigation={navigation}/>
       <View style={{
         justifyContent: 'center',
@@ -20,7 +23,8 @@ const OurLocationScreen = ({navigation}) => {
 
         <Text style={{
           fontWeight: 'bold',
-          marginTop: 30
+          marginTop: 30,
+          color: '#FFFFFF'
         }}>5714 5th Ave, Brooklyn, NY 11220</Text>
       </View>
     </View>

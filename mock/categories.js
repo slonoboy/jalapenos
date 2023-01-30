@@ -1,62 +1,65 @@
+import * as svgs from './categories_svg'
+
+
 export const categories = [
 {
     category_name: "breakfasts",
-    imageOn:  require('../assets/categories/breakfastsOn.png'),
-    imageOff:  require('../assets/categories/breakfastsOff.png')
+    imageOn:  <svgs.BreakfastsOn/>,
+    imageOff:  <svgs.BreakfastsOff/>
 },
 {
     category_name: "burritos",
-    imageOn:  require('../assets/categories/burritosOn.png'),
-    imageOff:  require('../assets/categories/burritosOff.png')
+    imageOn:  <svgs.BurritosOn/>,
+    imageOff:  <svgs.BurritosOff/>
 },
 {
     category_name: "children",
-    imageOn:  require('../assets/categories/childrenOn.png'),
-    imageOff:  require('../assets/categories/childrenOff.png')
+    imageOn: <svgs.ChildrenOn/>,
+    imageOff:  <svgs.ChildrenOff/>
 },
 {
     category_name: "cocktails",
-    imageOn:  require('../assets/categories/cocktailsOn.png'),
-    imageOff:  require('../assets/categories/cocktailsOff.png')
+    imageOn:  <svgs.CocktailsOn/>,
+    imageOff:  <svgs.CocktailsOff/>
 },
 {
     category_name: "drinks",
-    imageOn:  require('../assets/categories/drinksOn.png'),
-    imageOff:  require('../assets/categories/drinksOff.png')
+    imageOn:  <svgs.DrinksOn/>,
+    imageOff:  <svgs.DrinksOff/>
 },
 {
     category_name: "enchiladas",
-    imageOn:  require('../assets/categories/enchiladasOn.png'),
-    imageOff:  require('../assets/categories/enchiladasOff.png')
+    imageOn:  <svgs.EnchiladasOn/>,
+    imageOff: <svgs.EnchiladasOff/>
 },
 {
     category_name: "nachos",
-    imageOn:  require('../assets/categories/nachosOn.png'),
-    imageOff:  require('../assets/categories/nachosOff.png')
+    imageOn:  <svgs.NachosOn/>,
+    imageOff:  <svgs.NachosOff/>
 },
 {
     category_name: "platos",
-    imageOn:  require('../assets/categories/platosOn.png'),
-    imageOff:  require('../assets/categories/platosOff.png')
+    imageOn:  <svgs.PlatosOn/>,
+    imageOff:  <svgs.PlatosOff/>
 },
 {
     category_name: "salads",
-    imageOn:  require('../assets/categories/saladsOn.png'),
-    imageOff:  require('../assets/categories/saladsOff.png')
+    imageOn:  <svgs.SaladsOn/>,
+    imageOff: <svgs.SaladsOff/>
 },
 {
     category_name: "sides",
-    imageOn:  require('../assets/categories/sidesOn.png'),
-    imageOff:  require('../assets/categories/sidesOff.png')
+    imageOn:  <svgs.SidesOn/>,
+    imageOff:  <svgs.SidesOff/>
 },
 {
     category_name: "soups",
-    imageOn:  require('../assets/categories/soupsOn.png'),
-    imageOff:  require('../assets/categories/soupsOff.png')
+    imageOn:  <svgs.SoupsOn/>,
+    imageOff:  <svgs.SoupsOff/>
 },
 {
     category_name: "tacos",
-    imageOn:  require('../assets/categories/tacosOn.png'),
-    imageOff:  require('../assets/categories/tacosOff.png')
+    imageOn:  <svgs.TacosOn/>,
+    imageOff:  <svgs.TacosOff/>
 },
 ]

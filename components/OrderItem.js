@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBars, faLocationDot, faP, faCirclePlus, faPlus, faBagShopping, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Spacer, Divider } from '@react-native-material/core';
 import { HomeContext } from '../context/HomeContext';
+import { set_first_char_to_capital } from '../utils/utils';
 
 const OrderItem = ({item}) => {
 
@@ -19,7 +20,7 @@ const OrderItem = ({item}) => {
                     minHeight: 100,
                     width: 200,
                     borderRadius: 20,
-                    backgroundColor: 'white',
+                    backgroundColor: '#2E3235',
                     justifyContent: 'center',
                     padding: 20,
                     shadowColor: "#000",
@@ -35,9 +36,8 @@ const OrderItem = ({item}) => {
                     <Text style={{
                         fontWeight: 'bold',
                         fontSize: 12,
-                        color: '#3D3838',
-                        textTransform: 'uppercase'
-                    }}>{item.dish.name}</Text>
+                        color: '#FFFFFF',
+                    }}>{set_first_char_to_capital(item.dish.name)}</Text>
                     <Text style={{
                         fontWeight: 'bold',
                         fontSize: 12,
@@ -46,8 +46,8 @@ const OrderItem = ({item}) => {
                     <Text style={{
                         fontWeight: 'bold',
                         fontSize: 15,
-                        color: '#FF0036'
-                    }}>${item.sum_price}</Text>
+                        color: '#F83103'
+                    }}>${item.sum_price.toFixed(2)}</Text>
                 </View>
 
                 <Spacer/>
@@ -55,7 +55,7 @@ const OrderItem = ({item}) => {
                 <View style={{
                     minHeight: 80,
                     borderRadius: 10,
-                    backgroundColor: 'white',
+                    backgroundColor: '#2E3235',
                     justifyContent: 'center',
                     alignItems: 'center',
                     shadowColor: "#000",
@@ -72,7 +72,7 @@ const OrderItem = ({item}) => {
                         paddingHorizontal: 20,
                         paddingVertical: 10,
                         fontSize: 15,
-                        color: '#3D3838'
+                        color: '#FFFFFF'
                     }}>{item.count}</Text>
 
                 </View>

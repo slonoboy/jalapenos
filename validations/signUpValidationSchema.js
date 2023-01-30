@@ -19,7 +19,7 @@ const signUpValidationSchema = yup.object().shape({
     password2: yup
         .string()
         .nullable()
-        .required()
+        .required("password is a required field")
         .oneOf([yup.ref('password'), null], 'Passwords must match')
 })  
 

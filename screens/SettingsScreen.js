@@ -10,8 +10,9 @@ const SettingsScreen = () => {
 
   return (
     <View style={{
-      justifyContent: 'center',
-      alignItems: 'center'
+      flex: 1,
+      alignItems: 'center',
+      backgroundColor: '#15191F'
     }}>
       <View style={{
         shadowColor: "#000",
@@ -23,13 +24,13 @@ const SettingsScreen = () => {
         shadowRadius: 3.84,
         borderRadius: 60,
         elevation: 5,
-        marginTop: 20
+        marginTop: 20,
       }}>
         <TouchableOpacity style={{
           flexDirection: 'row',
           width: 300,
           alignItems: 'center',
-          backgroundColor: 'white',
+          backgroundColor: '#F83103',
           borderRadius: 60,
           height: 40,
           padding: 10,
@@ -39,7 +40,7 @@ const SettingsScreen = () => {
         onPress={() => {logout()}}>
           <Text style={{
             fontWeight: 'bold',
-            color: '#3D3838',
+            color: '#FFFFFF',
           }}>Logout</Text>
         </TouchableOpacity>
       </View>

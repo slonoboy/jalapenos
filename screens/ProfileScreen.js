@@ -78,12 +78,14 @@ const ProfileScreen = () => {
 
   return (
     <View style={{
-      flex: 1
+      flex: 1,
+      backgroundColor: '#15191F'
     }}>
       <View style={{
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: isLoading ? 0.3 : 1
+        opacity: isLoading ? 0.3 : 1,
+        backgroundColor: '#15191F'
       }}>
         <ProfileComponent setData={setFullName} inputData={fullName} icon={faUser}/>
         <ProfileComponent setData={setPhoneNumber} inputData={phoneNumber} icon={faPhone}/>
@@ -98,7 +100,7 @@ const ProfileScreen = () => {
             height: 40,
             marginTop: 20,
             padding: 10,
-            backgroundColor: "#FF0036"
+            backgroundColor: "#F83103"
           }}
           onPress={() => {editProfile()}}>
             <Text style={{

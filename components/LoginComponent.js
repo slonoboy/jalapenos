@@ -11,7 +11,9 @@ const LoginComponent = ({navigation}) => {
     const {login} = useContext(AuthContext)
 
     return(
-        <View>
+        <View style={{
+            height: 400
+        }}>
             <Formik
                 validationSchema={loginValidationSchema}
                 initialValues={{ username: "", password: "" }}
@@ -31,13 +33,15 @@ const LoginComponent = ({navigation}) => {
                     <TextInput
                         style={{
                             marginTop: 40, 
-                            borderBottomColor: errors.username && touched.username ? '#FF0036' : '#ddd', 
+                            color: '#ddd',
+                            borderBottomColor: errors.username && touched.username ? '#F83103' : '#ddd', 
                             borderBottomWidth: 1,
                             width: 250,
                             fontSize: 15,
                         }} 
                         name="username"
                         placeholder="Username"
+                        placeholderTextColor='#ddd'
                         onChangeText={handleChange('username')}
                         onBlur={handleBlur('username')}
                         value={values.username}
@@ -46,20 +50,22 @@ const LoginComponent = ({navigation}) => {
                     {
                         errors.username && touched.username &&
                         <Text style={{
-                            color: '#FF0036'
+                            color: '#F83103'
                         }}>{errors.username}</Text>
                     }
 
                     <TextInput
                         style={{ 
                             marginTop: 20,
-                            borderBottomColor: errors.password && touched.password ? '#FF0036' : '#ddd', 
+                            color: '#ddd',
+                            borderBottomColor: errors.password && touched.password ? '#F83103' : '#ddd', 
                             borderBottomWidth: 1,
                             width: 250,
                             fontSize: 15,
                         }} 
                         name="password"
                         placeholder="Password"
+                        placeholderTextColor='#ddd'
                         onChangeText={handleChange('password')}
                         onBlur={handleBlur('password')}
                         value={values.password}
@@ -70,7 +76,7 @@ const LoginComponent = ({navigation}) => {
                     {
                         errors.password && touched.password &&
                         <Text style={{
-                            color: '#FF0036'
+                            color: '#F83103'
                         }}>{errors.password}</Text>
                     }
 
@@ -84,12 +90,11 @@ const LoginComponent = ({navigation}) => {
                             disabled={!isValid}
                             style={{ 
                                 width: 250, 
-                                backgroundColor: '#FF0036', 
+                                backgroundColor: '#F83103', 
                                 padding: 10,
                                 alignItems:'center', 
                                 justifyContent: 'center', 
-                                borderRadius: 40,
-                                marginTop:30
+                                borderRadius: 12,
                                 }} 
                         >
                             <Text 
@@ -99,7 +104,7 @@ const LoginComponent = ({navigation}) => {
                                 fontSize:16,
                                 fontWeight: 'bold',
                             }}>
-                            Log in</Text>
+                            Login</Text>
                         </TouchableOpacity>
                     </View>
                     </>

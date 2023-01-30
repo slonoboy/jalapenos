@@ -18,7 +18,7 @@ const ProfileComponent = (props) => {
         marginTop: 20,
         height: 40,
         width: 300,
-        backgroundColor: 'white',
+        backgroundColor: '#2E3235',
         alignItems: 'center',
         justifyContent: 'flex-start',
         paddingLeft: 15
@@ -27,11 +27,11 @@ const ProfileComponent = (props) => {
             marginRight: 15
           }}
           icon={props.icon}
-          color={"#FF0036"}/>
+          color={"#F83103"}/>
           <TextInput
             style={{
               fontWeight: 'bold',
-              color: '#3D3838'
+              color: '#FFFFFF'
             }}
             value={props.inputData}
             onChangeText={text => props.setData(text)}

@@ -16,7 +16,7 @@ class OrderHistoryItem extends React.PureComponent{
                 marginVertical: 20,
                 marginHorizontal: 30,
                 borderRadius: 30,
-                backgroundColor: 'white',
+                backgroundColor: '#2E3235',
                 paddingHorizontal: 20,
                 paddingVertical: 15,
                 shadowColor: "#000",
@@ -32,7 +32,7 @@ class OrderHistoryItem extends React.PureComponent{
                 <Text style={{
                 fontWeight: 'bold',
                 fontSize: 12,
-                color: '#3D3838'
+                color: '#FFFFFF'
                 }}>Order number: {order.id}</Text> 
                 <Text style={{
                 fontSize: 12,
@@ -53,13 +53,13 @@ class OrderHistoryItem extends React.PureComponent{
                         }}>
                         <Text style={{
                             fontSize: 12,
-                            color: '#3D3838'
+                            color: '#FFFFFF'
                         }}>Total price </Text>
                         <Text style={{
                             fontSize: 12,
                             fontWeight: 'bold',
-                            color: '#FF0036'
-                        }}>${order.total_price}</Text>
+                            color: '#F83103'
+                        }}>${order.total_price.toFixed(2)}</Text>
                         </View>
 
                         <View style={{
@@ -67,14 +67,14 @@ class OrderHistoryItem extends React.PureComponent{
                         }}>
                         <Text style={{
                             fontSize: 12,
-                            color: '#3D3838'
+                            color: '#FFFFFF'
                         }}>Status: </Text>
                         <Text style={{
-                            color: order.is_completed ? '#00FF0A' : '#FF0036',
+                            color: order.is_completed ? '#00FF0A' : '#F83103',
                             fontSize: 12
                         }}>* </Text>
                         <Text style={{
-                            color: '#3D3838',
+                            color: '#FFFFFF',
                             fontSize: 12
                         }}>{order.is_completed ? "Completed" : "In process"}</Text>
                         </View>
@@ -82,7 +82,7 @@ class OrderHistoryItem extends React.PureComponent{
 
                     <View>
                         <TouchableOpacity style={{
-                            backgroundColor: '#FF0036',
+                            backgroundColor: '#F83103',
                             borderRadius: 30,
                             paddingVertical: 5,
                             paddingHorizontal: 10

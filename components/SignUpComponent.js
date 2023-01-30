@@ -15,7 +15,9 @@ const SignUpComponent = () => {
     const [password2, setPassword2] = useState(null);
 
     return(
-        <View>
+        <View style={{
+            height: 400
+        }}>
             <Formik
                 validationSchema={signUpValidationSchema}
                 initialValues={{ email:"", username: "", password: "", password2: "" }}
@@ -34,34 +36,38 @@ const SignUpComponent = () => {
                         <TextInput
                             style={{
                                 marginTop: 40, 
-                                borderBottomColor:  errors.email && touched.email ? '#FF0036' : '#ddd', 
+                                color: '#ddd',
+                                borderBottomColor:  errors.email && touched.email ? '#F83103' : '#ddd', 
                                 borderBottomWidth: 1,
                                 width: 250,
                                 fontSize: 15,
                             }} 
                             name="email"
                             placeholder="Email"
+                            placeholderTextColor='#ddd'
                             onChangeText={handleChange('email')}
-                            onBlur={handleBlur('username')}
+                            onBlur={handleBlur('email')}
                             value={values.email}
                         />
                         {
                             errors.email && touched.email && 
                                 <Text style={{
-                                    color: '#FF0036'
+                                    color: '#F83103'
                                 }}>{errors.email}</Text>
                         }
 
                         <TextInput
                             style={{
                                 marginTop: 20, 
-                                borderBottomColor: errors.username && touched.username ? '#FF0036' : '#ddd', 
+                                color: '#ddd',
+                                borderBottomColor: errors.username && touched.username ? '#F83103' : '#ddd', 
                                 borderBottomWidth: 1,
                                 width: 250,
                                 fontSize: 15,
                             }} 
                             name="username"
                             placeholder="Username"
+                            placeholderTextColor='#ddd'
                             onChangeText={handleChange('username')}
                             onBlur={handleBlur('username')}
                             value={values.username}
@@ -70,20 +76,22 @@ const SignUpComponent = () => {
                         {
                             errors.username && touched.username &&
                                 <Text style={{
-                                    color: '#FF0036'
+                                    color: '#F83103'
                                 }}>{errors.username}</Text>
                         }
 
                         <TextInput
                             style={{ 
                                 marginTop: 20,
-                                borderBottomColor: errors.password && touched.password ? '#FF0036' : '#ddd', 
+                                color: '#ddd',
+                                borderBottomColor: errors.password && touched.password ? '#F83103' : '#ddd', 
                                 borderBottomWidth: 1,
                                 width: 250,
                                 fontSize: 15,
                             }} 
                             secureTextEntry
                             placeholder="Password"
+                            placeholderTextColor='#ddd'
                             onChangeText={handleChange('password')}
                             onBlur={handleBlur('password')}
                             value={values.password}
@@ -91,20 +99,22 @@ const SignUpComponent = () => {
                         {
                             errors.password && touched.password && 
                                 <Text style={{
-                                    color: '#FF0036'
+                                    color: '#F83103'
                                 }}>{errors.password}</Text>
                         }
 
                         <TextInput
                             style={{ 
                                 marginTop: 20,
-                                borderBottomColor: errors.password2 && touched.password2 ? '#FF0036' : '#ddd', 
+                                color: '#ddd',
+                                borderBottomColor: errors.password2 && touched.password2 ? '#F83103' : '#ddd', 
                                 borderBottomWidth: 1,
                                 width: 250,
                                 fontSize: 15,
                             }} 
                             secureTextEntry
                             placeholder="Confirm password"
+                            placeholderTextColor='#ddd'
                             onChangeText={handleChange('password2')}
                             onBlur={handleBlur('password2')}
                             value={values.password2}
@@ -113,7 +123,7 @@ const SignUpComponent = () => {
                         {
                             errors.password2 && touched.password2 &&
                                 <Text style={{
-                                    color: '#FF0036'
+                                    color: '#F83103'
                                 }}>{errors.password2}</Text>
                         }
 
@@ -125,12 +135,11 @@ const SignUpComponent = () => {
                             <TouchableOpacity
                                 style={{ 
                                     width: 250, 
-                                    backgroundColor: '#FF0036', 
+                                    backgroundColor: '#F83103', 
                                     padding: 10,
                                     alignItems:'center', 
                                     justifyContent: 'center', 
-                                    borderRadius: 40,
-                                    marginTop:30
+                                    borderRadius: 12,
                                     }} 
                                 onPress={handleSubmit}
                                 disabled={!isValid}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const LoginSwitch = ({
+const PortionSwith = ({
     navigation,
     selectionMode,
     onSelectSwitch,
@@ -40,7 +40,7 @@ const LoginSwitch = ({
                     color: '#FFFFFF',
                     fontWeight: 'bold'
                 }}>
-                    Log in
+                    Default
                 </Text>
                 </TouchableOpacity>
 
@@ -60,7 +60,7 @@ const LoginSwitch = ({
                         color: '#FFFFFF',
                         fontWeight: 'bold',
                     }}>
-                    Sign Up
+                    Large
                 </Text>
                 </TouchableOpacity>
         </View>
@@ -68,4 +68,4 @@ const LoginSwitch = ({
    );
 };
 
-export default LoginSwitch;
+export default PortionSwith;

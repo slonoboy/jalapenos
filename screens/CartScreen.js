@@ -80,20 +80,21 @@ const CartScreen = ({navigation}) => {
                 }}>
                     <Text style={{
                         fontWeight: 'bold',
-                        fontSize: 20
+                        fontSize: 20,
+                        color: '#FFFFFF'
                     }}>Your cart seems empty go to </Text>
                     <TouchableOpacity style={{
                         borderWidth: 2,
                         borderRadius: 50,
                         padding: 10,
-                        borderColor: '#FF0036',
+                        borderColor: '#F83103',
                         marginTop: 20
                     }}
                     onPress={() => {navigation.navigate("Home Stack")}}>
                         <Text style={{
                             fontWeight: 'bold',
                             fontSize: 25,
-                            color: '#FF0036'
+                            color: '#F83103'
                         }}>Menu</Text>
                     </TouchableOpacity>
                 </View>
@@ -113,7 +114,7 @@ const CartScreen = ({navigation}) => {
             animationOut={'fadeOut'}
             >
                 <View style={{
-                    backgroundColor: 'white',
+                    backgroundColor: '#2E3235',
                     height: 280,
                     width: 330,
                     alignItems: 'center',
@@ -128,7 +129,7 @@ const CartScreen = ({navigation}) => {
                         <TouchableOpacity
                         onPress={() => {setRemoveModalShow(false)}}>
                             <FontAwesomeIcon 
-                                color='grey'
+                                color='#FFFFFF'
                                 icon={faXmark} 
                                 size={18}
                                 
@@ -145,12 +146,12 @@ const CartScreen = ({navigation}) => {
                         marginBottom: 15
                     }}>
                         <FontAwesomeIcon
-                            color='#FF0036'
+                            color='#F83103'
                             icon={faTrashCan} 
                             size={20}
                         />
                         <Text style={{
-                            color: "#FF0036",
+                            color: "#F83103",
                             fontSize: 20,
                             fontWeight: 'bold'
                         }}>Delete Order</Text>
@@ -161,7 +162,7 @@ const CartScreen = ({navigation}) => {
                     }}>
                         <Text style={{
                             fontSize: 12,
-                            color: '#3D3838',
+                            color: '#FFFFFF',
                             paddingHorizontal: 70,
                             justifyContent: 'center',
                             alignItems: 'center',
@@ -169,7 +170,7 @@ const CartScreen = ({navigation}) => {
                         }}>Deleting an order will remove it from the shopping cart</Text>
                     </View>
                     <TouchableOpacity style={{
-                        backgroundColor: '#FF0036',
+                        backgroundColor: '#F83103',
                         borderRadius: 50,
                         width: 200,
                         height: 40,
@@ -192,11 +193,11 @@ const CartScreen = ({navigation}) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         borderWidth: 1,
-                        borderColor: '#3D3838'
+                        borderColor: '#FFFFFF'
                     }}
                     onPress={() => {setRemoveModalShow(false)}}>
                         <Text style={{
-                            color: '#3D3838',
+                            color: '#FFFFFF',
                             fontWeight: 'bold',
                             fontSize: 12,
                         }}>No, Keep Order</Text>
@@ -213,7 +214,7 @@ const CartScreen = ({navigation}) => {
             animationOut={'fadeOut'}
             >
                 <View style={{
-                    backgroundColor: 'white',
+                    backgroundColor: '#2E3235',
                     height: 280,
                     width: 330,
                     alignItems: 'center',
@@ -228,7 +229,7 @@ const CartScreen = ({navigation}) => {
                         <TouchableOpacity
                         onPress={() => {setOrderModalShow(false)}}>
                             <FontAwesomeIcon 
-                                color='grey'
+                                color='#FFFFFF'
                                 icon={faXmark} 
                                 size={18}
                                 
@@ -245,12 +246,12 @@ const CartScreen = ({navigation}) => {
                         marginBottom: 15
                     }}>
                         <FontAwesomeIcon
-                            color='#FF0036'
+                            color='#F83103'
                             icon={faCheckCircle} 
                             size={20}
                         />
                         <Text style={{
-                            color: "#FF0036",
+                            color: "#F83103",
                             fontSize: 20,
                             fontWeight: 'bold'
                         }}>Confirm Order</Text>
@@ -261,7 +262,7 @@ const CartScreen = ({navigation}) => {
                     }}>
                         <Text style={{
                             fontSize: 12,
-                            color: '#3D3838',
+                            color: '#FFFFFF',
                             paddingHorizontal: 70,
                             justifyContent: 'center',
                             alignItems: 'center',
@@ -269,7 +270,7 @@ const CartScreen = ({navigation}) => {
                         }}>Confirming the order will create an order</Text>
                     </View>
                     <TouchableOpacity style={{
-                        backgroundColor: '#FF0036',
+                        backgroundColor: '#F83103',
                         borderRadius: 50,
                         width: 200,
                         height: 40,
@@ -292,11 +293,11 @@ const CartScreen = ({navigation}) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         borderWidth: 1,
-                        borderColor: '#3D3838'
+                        borderColor: '#FFFFFF'
                     }}
                     onPress={() => {setOrderModalShow(false)}}>
                         <Text style={{
-                            color: '#3D3838',
+                            color: '#FFFFFF',
                             fontWeight: 'bold',
                             fontSize: 12,
                         }}>No, Keep Looking</Text>
@@ -329,7 +330,7 @@ const CartScreen = ({navigation}) => {
                     <Spacer/>
 
                     <View style={{
-                        backgroundColor: 'white',
+                        backgroundColor: '#2E3235',
                         padding: 30,
                         minHeight: 250,
                         borderTopWidth: 0.7
@@ -346,7 +347,7 @@ const CartScreen = ({navigation}) => {
                             <Text style={{
                                 fontWeight: 'bold',
                                 fontSize: 12,
-                                color: '#FF0036'
+                                color: '#F83103'
                             }}>${subTotal.toFixed(2)}</Text>
                         </View>
                         <View style={{
@@ -361,7 +362,7 @@ const CartScreen = ({navigation}) => {
                             <Text style={{
                                 fontWeight: 'bold',
                                 fontSize: 12,
-                                color: '#FF0036'
+                                color: '#F83103'
                             }}>${tax.toFixed(2)}</Text>
                         </View>
 
@@ -374,13 +375,13 @@ const CartScreen = ({navigation}) => {
                         }}>
                             <Text style={{
                                 fontSize: 15,
-                                color: '#3D3838',
+                                color: '#FFFFFF',
                                 fontWeight: 'bold'
                             }}>Shopping Cart Total</Text>
                             <Spacer/>
                             <Text style={{
                                 fontSize: 15,
-                                color: '#FF0036',
+                                color: '#F83103',
                                 fontWeight: 'bold'
                             }}>${cartTotal.toFixed(2)}</Text>
                         </View>
@@ -401,9 +402,11 @@ const CartScreen = ({navigation}) => {
                     height: 60,
                     width: '100%',
                     borderRadius: 20,
+                    borderColor: '#CDCDCD',
+                    borderWidth: 1,
                     justifyContent: 'space-evenly',
                     alignItems: 'center',
-                    backgroundColor: '#FFD9E1',
+                    backgroundColor: '#4C322D',
                     flexDirection: 'row'
                 }}
                 onPress={() => {setOrderModalShow(true)}}>
@@ -415,17 +418,17 @@ const CartScreen = ({navigation}) => {
                         <FontAwesomeIcon 
                         icon="fa-solid fa-bag-shopping"
                         size={30}
-                        color="#FF0036" />
+                        color="#F83103" />
                     </View>
                     <Text style={{
-                        color: '#3D3838',
+                        color: '#FFFFFF',
                         fontSize: 12,
                         fontWeight: 'bold'
                     }}>
                         Place on Order
                     </Text>
                     <Text style={{
-                        color: '#FF0036',
+                        color: '#F83103',
                         fontWeight: 'bold',
                         fontSize: 12
 
@@ -440,7 +443,7 @@ const CartScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FAFAFF'
+        backgroundColor: '#15191F'
     },
     header: {
         flexDirection: 'row',

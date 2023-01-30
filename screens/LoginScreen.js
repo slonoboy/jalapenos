@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react'
 import { View, StyleSheet, Text, TouchableOpacity, Image} from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
-import CustomSwitch from '../components/LoginSwitch'
 import LoginComponent from '../components/LoginComponent'
 import SignUpComponent from '../components/SignUpComponent'
 import { AuthContext } from '../context/AuthContext'
+import LoginSwitch from '../components/LoginSwitch'
 
 const LoginScreen = ({navigation}) => {
     const [index, setIndex] = useState(1);
@@ -25,7 +25,7 @@ const LoginScreen = ({navigation}) => {
 
                 <View style={styles.form}>
 
-                    <CustomSwitch
+                    <LoginSwitch
                         selectionMode={1}
                         onSelectSwitch={onSelectSwitch}
                         style={{
@@ -48,7 +48,7 @@ const LoginScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FAFAFF',
+        backgroundColor: '#15191F',
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'center',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     form:{
         marginHorizontal: 40,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#2E3235",
         alignItems: 'center',
         justifyContent: 'center',
         padding: 40,

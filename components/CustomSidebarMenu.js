@@ -23,6 +23,7 @@ const CustomSidebarMenu = (props) => {
     return(
         <View style={{
             flex: 1,
+            backgroundColor: '#2E3235'
         }}>
 
             <DrawerContentScrollView 
@@ -37,7 +38,7 @@ const CustomSidebarMenu = (props) => {
                         height: 160,
                         borderBottomEndRadius: 30,
                         borderBottomStartRadius: 30,
-                        backgroundColor: '#FF0036'
+                        backgroundColor: '#F83103'
                     }}>
                     <View style={{
                         paddingTop: 60,

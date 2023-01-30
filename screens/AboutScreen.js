@@ -4,13 +4,14 @@ import React from 'react'
 const AboutScreen = () => {
   return (
     <View style={{
-      justifyContent: 'center',
+      flex: 1,
       alignItems: 'center', 
-      marginTop: 20
+      paddingTop: 20,
+      backgroundColor: '#15191F'
     }}>
       <Text style={{
         fontWeight: 'bold',
-        color: '#3D3838',
+        color: '#FFFFFF',
         textAlign: 'center',
         paddingHorizontal: 120
       }}>This app was developed by the best company</Text>

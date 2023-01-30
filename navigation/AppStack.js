@@ -18,37 +18,39 @@ const AppStack = () => {
   return (
     <Drawer.Navigator drawerContent={props => <CustomSidebarMenu {...props}/>} screenOptions={{
       headerShown: false, 
-      swipeEnabled: true,
+      swipeEnabled: false,
       drawerActiveBackgroundColor: 'white',
       drawerActiveTintColor: 'black',
       drawerInactiveTintColor: 'black',
       drawerLabelStyle: {
         fontWeight: 'bold',
         marginLeft: -20,
-        fontSize: 15
+        fontSize: 15,
+        color: '#FFFFFF'
       },
       drawerItemStyle: {
         marginLeft: 20,
+        backgroundColor: '#2E3235'
       }
       }}>
         <Drawer.Screen component={HomeStack} name="Home" options={{
           drawerIcon: ({color}) => (
-            <FontAwesomeIcon icon={faBookOpen} color='#FF0036'/>
+            <FontAwesomeIcon icon={faBookOpen} color='#F83103'/>
           )
         }}/> 
         <Drawer.Screen component={OrderHistoryStack} name="Order History" options={{
           drawerIcon: ({color}) => (
-            <FontAwesomeIcon icon={faClockRotateLeft} color='#FF0036'/>
+            <FontAwesomeIcon icon={faClockRotateLeft} color='#F83103'/>
           )
         }}/>
         <Drawer.Screen component={OurLocationScreen} name="Our Location" options={{
           drawerIcon: ({color}) => (
-            <FontAwesomeIcon icon={faLocation} color='#FF0036'/>
+            <FontAwesomeIcon icon={faLocation} color='#F83103'/>
           )
         }}/>
         <Drawer.Screen component={SettingsStack} name="Settings" options={{
           drawerIcon: ({color}) => (
-            <FontAwesomeIcon icon={faGear} color='#FF0036'/>
+            <FontAwesomeIcon icon={faGear} color='#F83103'/>
           )
         }}/>
     </Drawer.Navigator> 

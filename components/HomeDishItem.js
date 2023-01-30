@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import {faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Spacer } from '@react-native-material/core';
 import { HomeContext } from '../context/HomeContext';
+import { set_first_char_to_capital } from '../utils/utils';
 
 // const HomeDishItem = ({dish, incrementCartitem}) => {
 //   return (
@@ -84,7 +85,7 @@ class HomeDishItem extends React.PureComponent{
   }
 
   checkInCart = () => {
-    return this.context.cartItems.find(cartItem => cartItem.dish === this.props.dish)
+    return this.context.cartItems.find(cartItem => cartItem.dish === this.props.dish || cartItem.dish === this.props.dish.large_portion)
   }
 
   componentDidMount(){
@@ -107,9 +108,9 @@ class HomeDishItem extends React.PureComponent{
             marginHorizontal: 30,
             padding: 30,
             borderRadius: 35,
-            backgroundColor: 'white',
+            backgroundColor: '#2E3235',
             marginBottom: 20,
-            shadowColor: this.state.inCart ? "#FF0036" : "#000",
+            shadowColor: this.state.inCart ? "#F83103" : "#000",
             shadowOffset: {
                 width: 0,
                 height: 2,
@@ -120,14 +121,15 @@ class HomeDishItem extends React.PureComponent{
             elevation: 5,
           }}>
             <View style={{
-                maxWidth: '80%',
+                width: '70%',
                 justifyContent: 'center',
+                marginRight: 10
             }}>
               <Text style={{
                 fontWeight: 'bold',
-                textTransform: 'uppercase',
-                fontSize: 12
-              }}>{dish.name}</Text>
+                fontSize: 12,
+                color: '#FFFFFF'
+              }}>{set_first_char_to_capital(dish.name)}</Text>
 
               <Text style={{
                 marginVertical: 3,
@@ -137,19 +139,39 @@ class HomeDishItem extends React.PureComponent{
 
               <Text style={{
                 fontWeight: 'bold',
-                color: '#FF0036',
+                color: '#FFFFFF',
                 fontSize: 20
-              }}>${dish.price}</Text>
+              }}>${dish.price.toFixed(2)}</Text>
             </View>
 
             <Spacer/>
 
             <View style={{
+              width: '30%'
+            }}>
+              <TouchableOpacity style={{
+                backgroundColor: "#F83103",
+                padding: 5,
+                borderRadius: 100,
+                alignItems: 'center',
+                alignContent: 'center',
+                justifyContent: 'center'
+              }}
+              onPress={() => {dish.has_large_portion ? this.props.openAddToCartModal(dish) : incrementCartitem(dish)}}>
+                <Text style={{
+                  fontSize: 12,
+                  fontWeight: 'bold',
+                  color: '#FFFFFF'
+                }}>Add to cart</Text>
+              </TouchableOpacity>
+            </View>
+
+            {/* <View style={{
               alignItems: 'center',
               justifyContent: 'center'
             }}>
               <TouchableOpacity style={{
-                backgroundColor: "#FF0036",
+                backgroundColor: "#F83103",
                 width: 30,
                 height: 30,
                 borderRadius: 100,
@@ -168,10 +190,11 @@ class HomeDishItem extends React.PureComponent{
               <>
                 <Text style={{
                   fontWeight: 'bold',
+                  color: '#FFFFFF',
                   marginVertical: 8
                 }}>{this.state.cartItem.count}</Text> 
                 <TouchableOpacity style={{
-                  backgroundColor: "#FF0036",
+                  backgroundColor: "#F83103",
                   width: 30,
                   height: 30,
                   borderRadius: 100,
@@ -188,7 +211,7 @@ class HomeDishItem extends React.PureComponent{
                 </TouchableOpacity>
               </>
               }
-            </View>
+            </View> */}
     </View> 
   )
   }

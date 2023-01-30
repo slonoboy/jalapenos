@@ -12,18 +12,19 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const CustomHeader = ({navigation, name}) => {
   return (
-               <SafeAreaView>
+               <SafeAreaView style={{
+                backgroundColor: '#15191F'
+               }}>
                 <View style={styles.header}>
                     <TouchableOpacity 
                     onPress={() => {navigation.goBack()}}>
-                        <BackArrow/>
+                        <FontAwesomeIcon icon="fa-solid fa-arrow-left-long" size={20} color="#FFFFFF50"/>
                     </TouchableOpacity>
 
                     <Spacer/>
 
                     <Text style={{
-                        color: "#3D3838",
-                        opacity: 0.5,
+                        color: "#FFFFFF50",
                         fontWeight: 'bold',
                         fontSize: 15
                     }}>{name}</Text>

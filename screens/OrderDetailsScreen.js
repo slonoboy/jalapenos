@@ -15,10 +15,12 @@ const OrderDetailsScreen = ({navigation}) => {
   const route = useRoute();
   const { order } = route.params;
 
-  const {cartItems, setCartItems} = useContext(HomeContext);
+  const {cartItems, setCartItems, setItemsNum} = useContext(HomeContext);
+  
 
   const reorder = () => {
     setCartItems(order.items);
+    setItemsNum(order.total_count)
     navigation.navigate("Cart");
   }
 
@@ -31,23 +33,42 @@ const OrderDetailsScreen = ({navigation}) => {
                 <ScrollView contentContainerStyle={{
                 }}>
                     {
-                        !order.is_completed &&
+                        !order.is_completed ?
                         <>
-                        <Text style={{
-                            alignSelf: 'center',
-                            fontWeight: 'bold',
-                            marginTop: 30
-                        }}>We are preparing the order</Text>
-                        <View style={{
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            height: 50,
-                            width: '100%',
-                        }}>
-                            <LottieView style={{
-                            }} 
-                            source={require("../assets/in_progress_animation.json")}  autoPlay loop/>
-                        </View>
+                            <Text style={{
+                                alignSelf: 'center',
+                                fontWeight: 'bold',
+                                marginTop: 30,
+                                color: '#FFFFFF'
+                            }}>We are preparing the order</Text>
+                            <View style={{
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                height: 50,
+                                width: '100%',
+                            }}>
+                                <LottieView style={{
+                                }} 
+                                source={require("../assets/in_progress_animation.json")}  autoPlay loop/>
+                            </View>
+                        </> :
+                        <>
+                            <Text style={{
+                                alignSelf: 'center',
+                                fontWeight: 'bold',
+                                marginTop: 30,
+                                color: '#FFFFFF' 
+                            }}>Order is prepared</Text>
+                            <View style={{
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                height: 50,
+                                width: '100%',
+                            }}>
+                                <LottieView style={{
+                                }} 
+                                source={require("../assets/completed.json")} autoPlay loop={false}  />
+                            </View>
                         </>
                     }
 
@@ -65,7 +86,7 @@ const OrderDetailsScreen = ({navigation}) => {
                     <Spacer/>
 
                     <View style={{
-                        backgroundColor: 'white',
+                        backgroundColor: '#2E3235',
                         padding: 30,
                         minHeight: 250,
                         borderTopWidth: 0.7
@@ -82,7 +103,7 @@ const OrderDetailsScreen = ({navigation}) => {
                             <Text style={{
                                 fontWeight: 'bold',
                                 fontSize: 12,
-                                color: '#FF0036'
+                                color: '#F83103'
                             }}>${order.total_price_without_tax.toFixed(2)}</Text>
                         </View>
                         <View style={{
@@ -97,7 +118,7 @@ const OrderDetailsScreen = ({navigation}) => {
                             <Text style={{
                                 fontWeight: 'bold',
                                 fontSize: 12,
-                                color: '#FF0036'
+                                color: '#F83103'
                             }}>${order.tax.toFixed(2)}</Text>
                         </View>
 
@@ -110,13 +131,13 @@ const OrderDetailsScreen = ({navigation}) => {
                         }}>
                             <Text style={{
                                 fontSize: 15,
-                                color: '#3D3838',
+                                color: '#FFFFFF',
                                 fontWeight: 'bold'
                             }}>Order Total</Text>
                             <Spacer/>
                             <Text style={{
                                 fontSize: 15,
-                                color: '#FF0036',
+                                color: '#F83103',
                                 fontWeight: 'bold'
                             }}>${order.total_price.toFixed(2)}</Text>
                         </View>
@@ -139,7 +160,9 @@ const OrderDetailsScreen = ({navigation}) => {
                     borderRadius: 20,
                     justifyContent: 'space-evenly',
                     alignItems: 'center',
-                    backgroundColor: '#FFD9E1',
+                    backgroundColor: '#4C322D',
+                    borderColor: '#CDCDCD',
+                    borderWidth: 1,
                     flexDirection: 'row'
                 }}
                 onPress={() => {order.is_completed ? reorder() : navigation.navigate("Home Stack")}}>
@@ -151,17 +174,17 @@ const OrderDetailsScreen = ({navigation}) => {
                         <FontAwesomeIcon 
                         icon={order.is_completed ? "fa-solid fa-bag-shopping" : "fa-solid fa-house"}
                         size={30}
-                        color="#FF0036" />
+                        color="#F83103" />
                     </View>
                     <Text style={{
-                        color: '#3D3838',
+                        color: '#FFFFFF',
                         fontSize: 12,
                         fontWeight: 'bold'
                     }}>
                         {order.is_completed ? "Re-Order" : "Go Home"}
                     </Text>
                     <Text style={{
-                        color: '#FF0036',
+                        color: '#F83103',
                         fontWeight: 'bold',
                         fontSize: 12
 
@@ -176,7 +199,7 @@ const OrderDetailsScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FAFAFF'
+        backgroundColor: '#15191F'
     },
     header: {
         flexDirection: 'row',

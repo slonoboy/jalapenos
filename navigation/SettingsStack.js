@@ -14,12 +14,11 @@ const SettingsStack = ({navigation}) => {
             <CustomHeader name={"Profile settings"} navigation={navigation}/>
             <Tab.Navigator
             style={{
-
             }}
             initialRouteName='Profile'
             screenOptions={{
                 tabBarStyle: {
-                    backgroundColor: '#F5F5F5',
+                    backgroundColor: '#15191F',
                     borderWidth: 0,
                     shadowOpacity: 0,
                     elevation: 0,
@@ -50,7 +49,7 @@ const SettingsStack = ({navigation}) => {
                 tabBarContentContainerStyle:{
                     justifyContent: 'space-evenly'
                 },
-                tabBarActiveTintColor: '#FF0036',
+                tabBarActiveTintColor: '#F83103',
                 tabBarInactiveTintColor: '#CDCDCD'
             }}
             >
